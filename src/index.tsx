@@ -1,12 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import App from "./App";
 
-// Define App component correctly
-const App: React.FC = () => {
-  return <h1>Meteorological Conditions Today App! ⛅</h1>;
-};
-
-// Ensure the root element exists
 const rootElement = document.getElementById("root");
 
 if (!rootElement) {
