@@ -29,35 +29,56 @@ Before you begin, ensure that you have the following installed:
  ```git clone https://github.com/your-username/weather-app.git```
 2. Navigate to the project directory: ```cd weather-app```
 3. Install the dependencies: ```npm install```
+4. Set up the OpenWeather API:
+   * Create an account on OpenWeatherMap if you don't have one.
+   * Get your API key from [OpenWeatherMap API keys page](https://openweathermap.org/api).
+   * Add your API key to the code where the API is called (usually inside ```src``` directory in ```index.tsx``` or wherever the API request is made). Replace ```YOUR_API_KEY``` in the URL.
+  
+  #### Example API call:
+```
+const API_KEY = "YOUR_API_KEY";
+const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`);
+```
+5. Run the app in development mode:
+```
+npm start
+```
+6. Open your browser and go to http://localhost:1234 to see the weather app in action.
+
+## How to Use
+1. Type the name of the city in the search bar at the top.
+2. The app will display the current weather information for the entered city, including:
+* City Name
+* Temperature (in Celsius)
+* Weather Description (clear sky, clouds, rain, etc.)
+* Weather Icon
+3. The weather data will be cached locally for subsequent requests.
 
 
+## Folder Structure
+```
+/weather-app
+  ├── /src
+  │   ├── index.tsx        # Entry point (React component)
+  │   ├── App.tsx          # Main App component
+  │   ├── styles.css       # Custom CSS
+  ├── index.html           # Root HTML file
+  ├── package.json         # Project dependencies and scripts
+  └── tsconfig.json        # TypeScript configuration
+```
 
+## Technologies Used
+* React: JavaScript library for building user interfaces.
+* TypeScript: Type-safe version of JavaScript to enhance development experience.
+* CSS: Utility-first CSS framework to build responsive, customizable UIs.
+* Parcel: Web application bundler to bundle your JavaScript files, images, and styles.
+* OpenWeather API: A third-party weather data provider for current weather information.
 
-### `npm test`
+## Contributing
+If you have suggestions, bug fixes, or enhancements, please follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Fork the repository.
+2. Create your feature branch (git checkout -b feature-name).
+3. Commit your changes (git commit -am 'Add new feature').
+4. Push to the branch (git push origin feature-name).
+5. Open a Pull Request.
