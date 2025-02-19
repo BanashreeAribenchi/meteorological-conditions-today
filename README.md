@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Weather App - React with TypeScript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple weather application that allows users to check the current weather conditions for any city. Built using React, TypeScript, and integrated with the OpenWeather API.
+This app allows users to search for a city, view the temperature, weather description, and weather icons in a user-friendly card layout.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+* Weather information display: Shows the temperature and weather description (clear sky, clouds, rain, etc.).
+* Search functionality: Search for any city to view its weather.
+* Responsive UI: A simple yet responsive design that adapts to various screen sizes.
+* Icons for weather conditions: Displays appropriate weather icons based on the weather data.
+* Caching: Caches weather data locally for faster subsequent requests.
 
-### `npm start`
+## Tech Stack
+* Frontend:
+  * React
+  * TypeScript
+* Weather API: OpenWeatherMap API
+* Build Tool: Parcel bundler
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
+### Prerequisites
+Before you begin, ensure that you have the following installed:
+* Node.js and npm (Node Package Manager) - Install Node.js
+* Parcel - Install Parcel (or use the npx command directly)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Installation
+1. Clone the repository to your local machine:
+ ```git clone https://github.com/your-username/weather-app.git```
+2. Navigate to the project directory: ```cd weather-app```
+3. Install the dependencies: ```npm install```
+4. Set up the OpenWeather API:
+   * Create an account on OpenWeatherMap if you don't have one.
+   * Get your API key from [OpenWeatherMap API keys page](https://openweathermap.org/api).
+   * Add your API key to the code where the API is called (usually inside ```src``` directory in ```index.tsx``` or wherever the API request is made). Replace ```YOUR_API_KEY``` in the URL.
+  
+  #### Example API call:
+```
+const API_KEY = "YOUR_API_KEY";
+const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`);
+```
+5. Run the app in development mode:
+```
+npm start
+```
+6. Open your browser and go to http://localhost:1234 to see the weather app in action.
 
-### `npm test`
+## How to Use
+1. Type the name of the city in the search bar at the top.
+2. The app will display the current weather information for the entered city, including:
+* City Name
+* Temperature (in Celsius)
+* Weather Description (clear sky, clouds, rain, etc.)
+* Weather Icon
+3. The weather data will be cached locally for subsequent requests.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Folder Structure
+```
+/weather-app
+  ├── /src
+  │   ├── index.tsx        # Entry point (React component)
+  │   ├── App.tsx          # Main App component
+  │   ├── styles.css       # Custom CSS
+  ├── index.html           # Root HTML file
+  ├── package.json         # Project dependencies and scripts
+  └── tsconfig.json        # TypeScript configuration
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
+* React: JavaScript library for building user interfaces.
+* TypeScript: Type-safe version of JavaScript to enhance development experience.
+* CSS: Utility-first CSS framework to build responsive, customizable UIs.
+* Parcel: Web application bundler to bundle your JavaScript files, images, and styles.
+* OpenWeather API: A third-party weather data provider for current weather information.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributing
+If you have suggestions, bug fixes, or enhancements, please follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Fork the repository.
+2. Create your feature branch (git checkout -b feature-name).
+3. Commit your changes (git commit -am 'Add new feature').
+4. Push to the branch (git push origin feature-name).
+5. Open a Pull Request.
