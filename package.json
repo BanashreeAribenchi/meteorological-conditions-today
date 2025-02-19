@@ -1,9 +1,13 @@
 {
   "name": "meteorological-conditions-today",
   "version": "1.0.0",
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
+  "description": "This project was bootstrapped with Parcel",
+  "homepage": "https://banashreearibenchi.github.io/meteorological-conditions-today/",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --public-url ./",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,6 +19,7 @@
     "autoprefixer": "^10.4.20",
     "buffer": "^6.0.3",
     "csstype": "^3.1.3",
+    "gh-pages": "^6.3.0",
     "parcel": "^2.13.3",
     "postcss": "^8.5.1",
     "process": "^0.11.10",
